@@ -164,11 +164,11 @@ class server
         //查询弹幕池
         $result = Db::get('pool', ['vid' => $id], false);
         if ($result == false) {
-            $result = [['time' => 0, 'type' => 0, 'size' => 0, 'color' => '0', 'user' => '0', 'text' => '']];
+            $result = [['time' => 0, 'type' => 0, 'size' => 0, 'color' => '0', 'text' => '', 'user' => '0']];
         }
 
         foreach ($result as $data) {
-            $danmaku[] = [(float)$data['time'], (int)$data['type'], (int)$data['size'], $data['color'], $data['user'], $data['text']];
+            $danmaku[] = [(float)$data['time'], (int)$data['type'], (int)$data['size'], $data['color'], $data['text'], $data['user']];
         }
 
 
